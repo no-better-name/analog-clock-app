@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:clock="clr-namespace:AnalogClockApp.Components"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             x:Name="this"
+             x:Class="AnalogClockApp.Components.GraphicalClock">
+    <Grid BindingContext="{x:Reference this}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <GraphicsView Grid.Row="0" Grid.Column="0" x:Name="clockGraphicalView" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <GraphicsView.Drawable>
+                <clock:AnalogClock x:Name="analogClock"/>
+            </GraphicsView.Drawable>
+        </GraphicsView>
+        <!--<Label 
+            Grid.Row="1" Grid.Column="0"
+            Text="{Binding ShownTime, StringFormat='{0:HH:mm:ss.fff}'}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>-->
+    </Grid>
+</ContentView>
